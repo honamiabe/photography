@@ -1,0 +1,379 @@
+@charset "utf-8";
+@import url("ress.css");
+@import url("admin.css");
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta&family=Notable&family=Raleway+Dots&display=swap');
+
+body {
+  color: #f3175a;
+  background-color: #fcfcfc;
+  font-family: 'Lexend Zetta', sans-serif;
+  z-index: 0;
+}
+
+/* トップページのアイキャッチ */
+#top {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+#top #firstClick {
+  background-size: cover;
+}
+#top a.show {
+  opacity: 1.0;
+}
+#top a {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: 1.5s;
+}
+
+/* メニューの遅延表示 */
+.menuContainer {
+  display: none;
+}
+
+/* トップメニューアニメーション */
+#topMenu  #nav{
+  opacity: 0;
+  transition: 4.0s;
+  visibility: hidden;
+}
+#topMenu #nav.show {
+  opacity: 1.0;
+  visibility: visible;
+}
+
+/* トップページメニュー */
+.topMenu {
+  position: fixed;
+  left: 30%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+.topMenu #name {
+  font-size: 14px;
+}
+.topMenu #nav {
+  display: block;
+  padding-left: 40px;
+  padding-top: 24px;
+}
+.topMenu ul {
+  margin-top: 0px;
+  list-style: none;
+  display: flex;
+}
+.topMenu li {
+  padding-right: 15px;
+  writing-mode: vertical-rl;
+  padding-top: 2px;
+  list-style: none;
+  font-size: 11px;
+  padding-right: 20px;
+  display: block;
+  position: relative;
+}
+.topMenu li::before{
+  content: "";
+  position: absolute;
+  top: -21%;
+  left: 9%;
+  width: 6px;
+  height: 6px;
+  background-color: #f3175a;
+  border-radius: 50%;
+}
+.topMenu li:nth-of-type(1)::before {
+  background-color: #fcfcfc;
+  border: 1px solid #f3175a;
+  border-radius: 50%;
+  display: inline-block;
+}
+.topMenu li a {
+  color: #f3175a;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+.topMenu li a:hover {
+  color: #f88bac;
+}
+
+/* その他メニュー */
+.photoMenuMask {
+  width: 100%;
+  height: 130px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  opacity: 0.5;
+  visibility: visible;
+  background: #fff;
+}
+.photoMenuMask.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1.0s;
+}
+.photoMenu {
+  position: fixed;
+  left: 5%;
+  top: 5px;
+  width: 90%;
+  margin: auto;
+  z-index: 2;
+  transition: 1.0s;
+  opacity: 1.0;
+  display: flex;
+  visibility: visible;
+}
+.photoMenu.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+.photoMenu #name a {
+  font-size: 14px;
+  color: #f3175a;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  transition: 0.6s;
+}
+.photoMenu #name a:hover {
+  color: #f88bac;
+}
+.photoMenu #nav {
+  display: block;
+  padding-left: 40px;
+  padding-top: 37px;
+}
+.photoMenu ul {
+  margin-top: 4px;
+  list-style: none;
+  display: flex;
+}
+.photoMenu li {
+  padding-right: 15px;
+  writing-mode: vertical-rl;
+  padding-top: 2px;
+  list-style: none;
+  font-size: 11px;
+  padding-right: 20px;
+  list-style-position:inside; 
+  display: block;
+  position: relative;
+}
+.photoMenu li::before{
+  content: "";
+  position: absolute;
+  top: -21%;
+  left: 9%;
+  width: 6px;
+  height: 6px;
+  background-color: #f3175a;
+  border-radius: 50%;
+  display: inline-block;
+}
+.photoMenu li:nth-of-type(1)::before{
+  background-color: #fcfcfc;
+  border: 1px solid #f3175a;
+}
+.photoMenu li a {
+  color: #f3175a;
+  font-size: 11px;
+  text-decoration: none;
+  list-style: lower-alpha;
+  margin: 0;
+  padding: 0;
+}
+.photoMenu li a:hover {
+  color: #f88bac;
+}
+.photoMenu #nav a {
+  color: #f3175a;
+  font-size: 9px;
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: 0.6s;
+}
+.photoMenu #nav a:hover {
+  color: #f88bac;
+}
+
+/* コンテンツ */
+.photo {
+  width: 70%;
+  margin: auto;
+  padding: 0 0 90px 0;
+}
+.photo .imgBox {
+  margin: 0px auto;
+  text-align : center;
+  padding-top: 90px
+}
+.photo .imgBox:nth-of-type(1) {
+  margin: 40px auto 0;
+}
+.photo .imgBox img {
+  vertical-align: bottom;
+}
+.lazy {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* コンテンツ遅延読み込み */
+.contents {
+  display: none;
+}
+/* a day メニュー */
+.pickContainer {
+  width: 90%;
+  margin: auto;
+}
+.pick {
+  padding-top: 140px;
+}
+.pick li {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 140px;
+  list-style: none;
+  display: block;
+  transition: 0.6s;
+  opacity: 1.0;
+  background: #000;
+}
+.pick li:hover {
+  cursor: pointer;
+  /* transform: scale(1.05, 1.05); */
+}
+.pick a { 
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: 0.6s;
+  background-size: cover;
+  background-position:center center;
+}
+.pick a:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+@media (max-width: 800px) {
+  .topMenu {
+    position: fixed;
+    left: 37%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  #top #firstClick {
+    max-width: 600px;
+    background-size: cover;
+  }
+
+/* トップページメニュー */
+.topMenu {
+  position: fixed;
+  top: 40%;
+  left: 30%;
+  display: flex;
+  flex-direction: column;
+  }
+  .topMenu #nav {
+    display: block;
+    padding-left: 24px;
+    padding-top: 0px;
+  }
+  .topMenu ul {
+    margin-top: 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .topMenu li {
+    writing-mode: horizontal-tb;
+    padding-top: 12px; 
+    display: block;
+    position: relative;
+  }
+  .topMenu li::before {
+    content: "";
+    position: absolute;
+    top: 59%;
+    left: -19%;
+    width: 9px;
+    height: 9px;
+    background-color: #f3175a;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .photoMenuMask {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    opacity: 0.5;
+    background: #fff;
+  }
+  .photoMenu {
+    /* position: fixed;
+    left: 25px;
+    top: 0px; */
+    width: 90%;
+    margin: auto;
+    z-index: 2;
+  }
+  .photoMenu #name {
+    height: 40px;
+  }
+  .photoMenu li {
+    display: none;
+  }
+  .photo , .contact , .biography {
+    width: 90%;
+  }
+  .pick{
+    padding-top: 50px;
+  }
+  .pick li {
+    height: 90px;
+    margin-bottom: 5px;
+  }
+
+  .photo .imgBox {
+    margin: 0px auto;
+    text-align : center;
+    padding-top: 35px
+  }
+  .photo .imgBox:nth-of-type(1) {
+    margin: 15px auto 0;
+}
+  .menu {
+    position: static;
+    margin: auto;
+  }
+  .menu .menuButton {
+    margin: auto;
+  }
+  .menu #name {
+    margin: 90px auto 0;
+    padding-right: 3px;
+  }
+
+}
